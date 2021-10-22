@@ -23,6 +23,9 @@ def dijkstra(graph, starting_vertex, destination_vertex):
             if distance < distances[neighbor]:
                 distances[neighbor] = distance
                 heapq.heappush(pq, (distance, neighbor))
+            
+        if current_vertex == destination_vertex:
+            return round(distances[destination_vertex], 2)
 
     return round(distances[destination_vertex], 2)
 
